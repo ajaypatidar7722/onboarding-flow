@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-unresolved */
 import React, { SyntheticEvent } from 'react';
 import { Row, Col, Form } from 'antd';
 import Button from '../Button';
