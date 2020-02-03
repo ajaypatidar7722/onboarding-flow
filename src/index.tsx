@@ -1,10 +1,13 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
 
 // css from antd
-import 'antd/dist/antd.css'; 
+import 'antd/dist/antd.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
