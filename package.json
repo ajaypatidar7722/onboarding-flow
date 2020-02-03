@@ -28,13 +28,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "airbnb",
-      "airbnb/hooks"
-    ]
-  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
