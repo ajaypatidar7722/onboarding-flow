@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-props-no-spreading */
+/* eslint-disable react/jsx-filename-extension */
 import React from 'react';
 import { Input as AntdInput } from 'antd';
 
@@ -7,8 +9,6 @@ export const inputStyles = {
   height: 50,
 };
 
-const Input = (props: any) => (
-  <AntdInput style={inputStyles} {...props} />
-);
+const Input = (props: any) => <AntdInput style={inputStyles} {...props} />;
 
 export default Input;
