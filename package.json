@@ -26,19 +26,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.+(js|jsx|ts|tsx)": [
-      "eslint --fix"
-    ],
-    "*.+(json|css|md)": [
-      "prettier --write"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
