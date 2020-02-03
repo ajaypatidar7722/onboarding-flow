@@ -1,24 +1,21 @@
 import React, { SyntheticEvent } from 'react';
-import {
-  Row,
-  Col,
-  Form,
-} from 'antd';
+import { Row, Col, Form } from 'antd';
 import Button from '../Button';
 import Input from '../Input';
+import * as formRules from '../../utils/formRules';
 
 const styles = {
   buttonWrapper: {
     padding: 15,
   },
   form: {
-    marginTop: 25
+    marginTop: 25,
   },
   formItem: {
-    alignItems: 'flex-start',
-    display: 'flex',
-    flexDirection: 'column',
-    padding: '0 15px',
+    alignItems: "flex-start",
+    display: "flex",
+    flexDirection: "column",
+    padding: "0 15px",
     marginBottom: 0,
   },
 };
@@ -31,70 +28,52 @@ const Step1Form = ({ form, onSubmit }: any) => {
     form.validateFields((err: Error, values: any) => {
       if (!err) {
         console.log(values);
-        onSubmit(values)
+        onSubmit(values);
       }
     });
   };
 
   return (
     <Form style={styles.form} onSubmit={handleSubmit}>
-      <Row>
+      <Row gutter={8}>
         <Col md={12} xs={24}>
           <Form.Item label="First Name">
-            {getFieldDecorator('firstName', {
-              rules: [{ required: true, message: 'Please enter your first name!' }]
-            })(
-              <Input type="text" />
-            )}
+            {getFieldDecorator("firstName", {
+              rules: formRules.firstName,
+            })(<Input type="text" />)}
           </Form.Item>
         </Col>
         <Col md={12} xs={24}>
           <Form.Item label="Last Name">
-            {getFieldDecorator('lastName', {
-              rules: [{ required: true, message: 'Please enter your last name!' }]
-            })(
-              <Input type="text" />
-            )}
+            {getFieldDecorator("lastName", {
+              rules: formRules.lastName,
+            })(<Input type="text" />)}
           </Form.Item>
         </Col>
         <Col span={24}>
           <Form.Item label="Email">
-            {getFieldDecorator('email', {
-              rules: [
-                { required: true, message: 'Please enter your email!' },
-                {
-                  type: 'email',
-                  message: 'Please enter valid E-mail!',
-                },
-              ]})(
-              <Input type="text" />
-            )}
+            {getFieldDecorator("email", {
+              rules: formRules.email,
+            })(<Input type="text" />)}
           </Form.Item>
         </Col>
         <Col span={24}>
           <Form.Item label="Phone number">
-           {getFieldDecorator('phone', {
-              rules: [{
-                required: true,
-                message: 'Please enter your phone number!'
-              },
-              {
-                pattern: /[2-9]{2}\d{8}/,
-                message: 'Phone number must have exact 10 digits and must not start from 1 or 0!',
-              },
-            ]})(
-              <Input type="number" />
-            )}
+            {getFieldDecorator("phone", {
+              rules: formRules.phoneNumber,
+            })(<Input type="number" />)}
           </Form.Item>
         </Col>
         <Col span={24} style={styles.buttonWrapper}>
-          <Button type="primary" htmlType="submit">Continue</Button>
+          <Button type="primary" htmlType="submit">
+            Continue
+          </Button>
         </Col>
       </Row>
     </Form>
   );
 };
 
-const Step1 = Form.create<any>({ name: 'step1Form' })(Step1Form);
+const Step1 = Form.create<any>({ name: "step1Form" })(Step1Form);
 
 export default Step1;

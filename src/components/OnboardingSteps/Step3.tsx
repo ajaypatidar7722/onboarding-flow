@@ -2,12 +2,11 @@ import React, { SyntheticEvent } from 'react';
 import { Input, Row, Col, Form } from 'antd';
 import { FormProps } from 'antd/lib/form/Form';
 import Button from '../Button';
+import * as formRules from '../../utils/formRules';
 
 const { TextArea } = Input;
 
-interface IProps extends FormProps {
-
-}
+interface IProps extends FormProps {}
 
 const Step3Form = ({ form, onSubmit }: any) => {
   const { getFieldDecorator } = form;
@@ -27,22 +26,22 @@ const Step3Form = ({ form, onSubmit }: any) => {
       <Row>
         <Col span={24}>
           <Form.Item label="Why are you intrested in software engineering?">
-            {getFieldDecorator('shortResponse', {
-              rules: [{ required: true, message: 'Please proivde a response.' }]
-            })(
-              <TextArea />
-            )}
+            {getFieldDecorator("shortResponse", {
+              rules: formRules.shortResponse,
+            })(<TextArea />)}
           </Form.Item>
         </Col>
 
         <Col span={24} className="Continue_btn">
-          <Button type="primary" htmlType="submit">Continue</Button>
+          <Button type="primary" htmlType="submit">
+            Continue
+          </Button>
         </Col>
       </Row>
     </Form>
   );
 };
 
-const Step3 = Form.create<any>({ name: 'step3Form' })(Step3Form);
+const Step3 = Form.create<any>({ name: "step3Form" })(Step3Form);
 
 export default Step3;

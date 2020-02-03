@@ -1,6 +1,5 @@
 import React, { FunctionComponent } from 'react';
 import { Card, Layout, Typography } from 'antd';
-import {  } from 'antd/lib/form/Form';
 import Step1 from '../components/OnboardingSteps/Step1';
 import Step2 from '../components/OnboardingSteps/Step2';
 import Step3 from '../components/OnboardingSteps/Step3';
