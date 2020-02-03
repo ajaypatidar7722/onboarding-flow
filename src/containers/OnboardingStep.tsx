@@ -1,3 +1,6 @@
+/* eslint-disable react/jsx-filename-extension */
+/* eslint-disable import/no-unresolved */
+/* eslint-disable import/extensions */
 import React, { FunctionComponent } from 'react';
 import { Card, Layout, Typography } from 'antd';
 import Step1 from '../components/OnboardingSteps/Step1';
@@ -31,32 +34,34 @@ const styles = {
 };
 
 interface StepDescription {
-  [key: string]: string
+  [key: string]: string;
 }
 
 interface StepForm {
-  [key: string]: FunctionComponent | any,
+  [key: string]: FunctionComponent | any;
 }
 
-interface StepParams { stepNumber: string };
+interface StepParams {
+  stepNumber: string;
+}
 
 const stepDescription: StepDescription = {
-  '1': 'Basic Questions',
-  '2': 'Experience Questions',
-  '3': 'Short Response Question',
+  1: 'Basic Questions',
+  2: 'Experience Questions',
+  3: 'Short Response Question',
 };
 
 const stepForm: StepForm = {
-  '1': Step1,
-  '2': Step2,
-  '3': Step3,
+  1: Step1,
+  2: Step2,
+  3: Step3,
 };
 
 const OnboardingStep = ({ match, history }: any) => {
   const { stepNumber }: StepParams = match.params;
   const FormComponent = stepForm[stepNumber];
 
-  const handleSubmit = (values: any) => {
+  const handleSubmit = () => {
     const nextStep = parseInt(stepNumber, 10) + 1;
     if (nextStep !== 4) {
       history.push(`/onboarding/${nextStep}`);
@@ -66,10 +71,17 @@ const OnboardingStep = ({ match, history }: any) => {
   return (
     <Layout style={styles.wrapper}>
       <Card style={styles.card} bodyStyle={{ textAlign: 'center' }}>
-        <Typography.Title style={styles.title} level={2}>User Onboarding</Typography.Title>
-          <Typography.Paragraph style={styles.stepDetail}>
-            Part {stepNumber}/3 - {stepDescription[stepNumber]}
-          </Typography.Paragraph>
+        <Typography.Title style={styles.title} level={2}>
+          User Onboarding
+        </Typography.Title>
+        <Typography.Paragraph style={styles.stepDetail}>
+          Part
+          {' '}
+          {stepNumber}
+          /3 -
+          {' '}
+          {stepDescription[stepNumber]}
+        </Typography.Paragraph>
         <FormComponent onSubmit={handleSubmit} />
       </Card>
     </Layout>
