@@ -1,6 +1,3 @@
-/* eslint-disable react/jsx-filename-extension */
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
 import React, { FunctionComponent } from 'react';
 import { Card, Layout, Typography } from 'antd';
 import Step1 from '../components/OnboardingSteps/Step1';
