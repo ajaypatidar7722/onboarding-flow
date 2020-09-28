@@ -7,8 +7,6 @@ export const inputStyles = {
   height: 50,
 };
 
-const Input = (props: any) => (
-  <AntdInput style={inputStyles} {...props} />
-);
+const Input = (props: any) => <AntdInput style={inputStyles} {...props} />;
 
 export default Input;

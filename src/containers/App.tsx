@@ -2,12 +2,10 @@ import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import Routes from '../routes';
 
-const App = () => {
-  return (
-    <BrowserRouter>
-      <Routes />
-    </BrowserRouter>
-  );
-}
+const App = () => (
+  <BrowserRouter>
+    <Routes />
+  </BrowserRouter>
+);
 
 export default App;

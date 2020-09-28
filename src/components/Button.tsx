@@ -11,8 +11,6 @@ export const buttonStyles = {
   width: '100%',
 };
 
-const Button = (props: any) => (
-  <AntdButton style={buttonStyles} {...props} />
-);
+const Button = (props: any) => <AntdButton style={buttonStyles} {...props} />;
 
 export default Button;

@@ -4,7 +4,7 @@ import App from './containers/App';
 import * as serviceWorker from './serviceWorker';
 
 // css from antd
-import 'antd/dist/antd.css'; 
+import 'antd/dist/antd.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
